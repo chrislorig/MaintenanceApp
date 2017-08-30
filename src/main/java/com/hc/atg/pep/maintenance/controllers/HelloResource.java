@@ -2,13 +2,13 @@ package com.hc.atg.pep.maintenance.controllers;
 
 import com.hc.atg.pep.maintenance.services.GreetingService;
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 
 /**
@@ -16,8 +16,8 @@ import javax.ws.rs.Produces;
  */
 @ApplicationScoped
 @Produces(APPLICATION_JSON)
-@Path("greetings")
-public class GreetingResource {
+@Path("hello")
+public class HelloResource {
     @Inject
     private GreetingService greetingService;
 
@@ -27,7 +27,7 @@ public class GreetingResource {
     }
 
     @GET
-    @Path("injectedgreeting")
+    @Path("greetingService")
     public  String getGreetingService(){
         return greetingService.getGreeting();
     }
